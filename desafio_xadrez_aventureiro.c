@@ -5,7 +5,7 @@
 
 int main()
 {
-            int Torre = 0, Bispo = 0, Rainha = 0, Cavalo = 0;
+            int Torre = 0, Bispo = 0, Rainha = 0;
 
         //TORRE
         for (Torre = 0; Torre < 5; Torre++) {
@@ -42,4 +42,3 @@ int main()
 	}
          return 0;
 }
-
