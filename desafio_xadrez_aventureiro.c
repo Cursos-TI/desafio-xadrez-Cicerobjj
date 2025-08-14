@@ -9,34 +9,37 @@ int main()
 
         //TORRE
         for (Torre = 0; Torre < 5; Torre++) {
-        printf("Torre vai para direita\n");
+        printf("Direita\n");
     }
         
         //BISPO
         while (Bispo < 5) {
-        printf("Bispo vai para direita e para frente\n");
+        printf("Cima Direita\n");
         Bispo++;
     }
     
         //RAINHA
         do {
-        printf("Rainha vai para frente\n");
+        printf("Esquerda\n");
         Rainha++;
     }
         while (Rainha < 8);
         
          //CAVALO
-         int n = 0;
-         for (int i = 0; i <= n; i++) {
-             for (int j = 0; j <= i; j++) {
-             printf("Cavalo vai para tras\n");
-         }
-         do {
-             printf("Cavalo vai para tras\n");
-         }
-         while (i >= 1 && i <= 2);
-         }
-         printf("Cavalo vai para a esquerda\n");               
-         
+         int casasparabaixo = 2;
+	     int casasparaesquerda = 1; 
+    	 int i, j;
+	 for (i = 1; i <= casasparabaixo; i++) {
+	 printf("Baixo\n");
+	 if (i == casasparabaixo) {
+	 j = 1;
+	 do {
+	 printf("Esquerda\n");
+	 j++;
+	 } 
+	 while (j <= casasparaesquerda);
+	 }
+	}
          return 0;
 }
+
