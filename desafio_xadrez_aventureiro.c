@@ -1,44 +1,81 @@
-//Desafio Xadrez Nível Aventureiro
-//Inclui o movimento do cavalo duas casas para baixo e uma casa para a esquerda com dois loops aninhados
+//Desafio Xadrez Nível Mestre
 
 #include <stdio.h>
 
-int main()
-{
-            int Torre = 0, Bispo = 0, Rainha = 0;
+//Movimento da Torre
+void recursiveLoopTorre(int T) {
+    if (T <= 5) {
+        printf("direita\n");
+        recursiveLoopTorre(T + 1);
+    }
+}
 
-        //TORRE
-        for (Torre = 0; Torre < 5; Torre++) {
+//Movimento do Bispo
+void recursiveLoopBispo(int n) {
+int casasparadireita = 5;
+int casasparacima = 5; 
+int i, j;
+    for (i = n; i <= casasparadireita; i++) {
+        if (i == casasparadireita) {
+        j = 1;
+            do {
+            printf("Cima Direita\n");
+            j++;
+        } 
+        while (j <= casasparacima);
+            recursiveLoopBispo(n + 1);
+        }
+    }
+}
+
+//Movimento da Rainha
+void recursiveLoopRainha(int R) {
+    if (R < 8) {
+        printf("Esquerda\n");
+        recursiveLoopRainha(R + 1);
+    }
+}
+
+//Movimento do Cavalo
+void recursiveLoopCavalo(int n) {
+    int casasparadireita = 1;
+    int casasparacima = 2;
+    int i, j;
+
+    
+    for (i = 1; i <= casasparacima; i++) {
+        printf("Cima\n");
+    }
+
+    
+    for (j = 1; j <= casasparadireita; j++) {
         printf("Direita\n");
     }
-        
-        //BISPO
-        while (Bispo < 5) {
-        printf("Cima Direita\n");
-        Bispo++;
-    }
+
     
-        //RAINHA
-        do {
-        printf("Esquerda\n");
-        Rainha++;
+    if (n < 1) { 
+        recursiveLoopCavalo(n + 1);
     }
-        while (Rainha < 8);
+}
+
+
+int main()
+
+{
+    int Torre = 1, Bispo = 5, Rainha = 1, Cavalo = 1;
         
-         //CAVALO
-         int casasparabaixo = 2;
-	     int casasparaesquerda = 1; 
-    	 int i, j;
-	 for (i = 1; i <= casasparabaixo; i++) {
-	 printf("Baixo\n");
-	 if (i == casasparabaixo) {
-	 j = 1;
-	 do {
-	 printf("Esquerda\n");
-	 j++;
-	 } 
-	 while (j <= casasparaesquerda);
-	 }
-	}
-         return 0;
+        printf("Torre\n");
+    recursiveLoopTorre(Torre);
+        printf("Bispo\n");
+        
+    recursiveLoopBispo(Bispo);
+        printf("Rainha\n");
+        
+    recursiveLoopRainha(Rainha);
+        printf("Cavalo\n");
+        
+    recursiveLoopCavalo(Cavalo);
+    
+    return 0;
+    
 }
